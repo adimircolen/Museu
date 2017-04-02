@@ -4,7 +4,7 @@ package br.ufmg.dcc.adimir;
  * @author adimircolen
  *
  */
-public class Acervo {
+public class Gallery {
 	public Art[] obras = new Art[1];
 	
 	public void add(Art obra) {
@@ -72,7 +72,7 @@ public class Acervo {
 	
 
 	public Art[] searchBy(String name, String author, Integer type) {
-		Acervo result = new Acervo();
+		Gallery result = new Gallery();
 		for(int i=0;i<this.obras.length;i++){
 			if ( name != null && this.obras[i].getName().equals( name ) ){
 				result.add(this.obras[i]);
@@ -104,26 +104,26 @@ public class Acervo {
 			new Art(9, "David", "Michelangelo", Art.ESCULTURA),
 		};
 		
-		Acervo acervo = new Acervo();
+		Gallery collection = new Gallery();
 		
 		for(int i=0;i<initObras.length;i++) {
-			acervo.add(initObras[i]);
+			collection.add(initObras[i]);
 		}
 		
-		System.out.println("Listagem de Todas as Obras\n" + acervo);
+		System.out.println("Listagem de Todas as Obras\n" + collection);
 		
-		Art[] michelangelo = acervo.searchBy(null, "Michelangelo", null);
+		Art[] michelangelo = collection.searchBy(null, "Michelangelo", null);
 		System.out.println("Listagem das Obras de Michelangelo");
 		
-		Art[] sculpt = acervo.searchBy(null, null, Art.ESCULTURA);
+		Art[] sculpt = collection.searchBy(null, null, Art.ESCULTURA);
 		System.out.println("Listagem das Esculturas");
-		System.out.println(Acervo.parseString(sculpt));
+		System.out.println(Gallery.parseString(sculpt));
 
-		Art[] paint = acervo.searchBy(null, null, Art.PINTURA);
+		Art[] paint = collection.searchBy(null, null, Art.PINTURA);
 		System.out.println("Listagem das Pinturas");
-		System.out.println(Acervo.parseString(paint));
+		System.out.println(Gallery.parseString(paint));
 		
-		acervo.remover(michelangelo);
-		System.out.println("Listagem de todas Todas as Obras\n" + acervo);
+		collection.remover(michelangelo);
+		System.out.println("Listagem de todas Todas as Obras\n" + collection);
 	}
 }
