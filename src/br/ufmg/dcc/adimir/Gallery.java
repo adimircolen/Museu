@@ -114,6 +114,7 @@ public class Gallery {
 		
 		Art[] michelangelo = collection.searchBy(null, "Michelangelo", null);
 		System.out.println("Listagem das Obras de Michelangelo");
+		System.out.println(Gallery.parseString(michelangelo));
 		
 		Art[] sculpt = collection.searchBy(null, null, Art.ESCULTURA);
 		System.out.println("Listagem das Esculturas");
